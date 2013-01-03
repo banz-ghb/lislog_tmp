@@ -373,10 +373,6 @@ $app_name = idx($app_info, 'name', '');
             that operate within Facebook.
           </p>
         </li>
-        <li>
-          <a href="https://developers.facebook.com/docs/guides/canvas/" target="_top" class="icon apps-on-facebook">Apps on Facebook</a>
-          <p>Let users find and connect to their friends in mobile apps and games.</p>
-        </li>
       </ul>
     </section>
   </body>
