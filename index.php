@@ -342,13 +342,6 @@ $app_name = idx($app_info, 'name', '');
             Facebook Login and Social Plugins.
           </p>
         </li>
-        <li>
-          <a href="https://developers.facebook.com/docs/guides/mobile/" target="_top" class="icon mobile-apps">Mobile Apps</a>
-          <p>
-            Integrate with our core experience by building apps
-            that operate within Facebook.
-          </p>
-        </li>
       </ul>
     </section>
   </body>
