@@ -364,6 +364,8 @@ $app_name = idx($app_info, 'name', '');
         </li>
       </ul>
     </section>
-    <fb:facepile href="http://developers.facebook.com" max_rows="1" width="300"></fb:facepile>
+    <section class="clearfix">
+    <fb:facepile href="https://lislog.herokuapp.com" max_rows="1" width="300"></fb:facepile>
+    </section>
   </body>
 </html>
