@@ -223,7 +223,7 @@ $app_name = idx($app_info, 'name', '');
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js";
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=554694347877002";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
@@ -364,5 +364,6 @@ $app_name = idx($app_info, 'name', '');
         </li>
       </ul>
     </section>
+    <fb:facepile href="http://developers.facebook.com" max_rows="1" width="300"></fb:facepile>
   </body>
 </html>
