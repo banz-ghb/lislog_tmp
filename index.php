@@ -187,24 +187,6 @@ $app_name = idx($app_info, 'name', '');
       </script>
     <![endif]-->
 
-    <!-- 2013-01-03 brian start add oepn graph function -->
-    <script type="text/javascript">
-    function postListen()
-    {
-        FB.api(
-           '/me/lislogapp:listen',
-           'post',
-           { radio station: 'https://lislog.herokuapp.com/jp.co.tbs/elekata.html' },
-           function(response) {
-           if (!response || response.error) {
-           alert('Error occured');
-           } else {
-           alert('Cook was successful! Action ID: ' + response.id);
-           }
-           });
-    }
-    </script>
-    <!-- 2013-01-03 brian end   add oepn graph function -->
 
   </head>
   <body>
@@ -291,7 +273,7 @@ $app_name = idx($app_info, 'name', '');
       <div>
         <h1>Welcome</h1>
         <!-- 2012-01-11 banz-ghb start publish_actions added -->
-        <div class="fb-login-button" data-scope="user_likes,user_photos"></div>
+        <div class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"></div>
         <!-- 2012-01-11 banz-ghb end   publish_actions added -->
       </div>
       <?php } ?>
