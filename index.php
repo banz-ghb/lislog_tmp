@@ -115,22 +115,7 @@ $app_name = idx($app_info, 'name', '');
         }
       }
 
-      $(function(){
-        $('#publishAction').click(function() {
-           FB.api('/me/lislogapi:tune_in','POST'
-             {
-               radio_program : 'http://samples.ogp.me/558973837449053'
-             },
-             function (response) {
-             // If response is null the user canceled the dialog
-             if (response != null) {
-               logResponse(response);
-             }
-            }
-          );
-        });
-
-        
+       
         // Set up so we handle click on the buttons
         $('#postToWall').click(function() {
           FB.ui(
@@ -262,6 +247,13 @@ $app_name = idx($app_info, 'name', '');
         <div id="share-app">
           <p>Share your app:</p>
           <ul>
+            <!-- 2012-01-11 banz-ghb start publish button added -->
+            <li>
+              <a href="#" class="facebook-button" id="publishAction" data-url="<?php echo AppInfo::getUrl(); ?>">
+                <span class="plus">Publish Action</span>
+              </a>
+            </li>
+            <!-- 2012-01-11 banz-ghb end   publish button added -->
             <li>
               <a href="#" class="facebook-button" id="postToWall" data-url="<?php echo AppInfo::getUrl(); ?>">
                 <span class="plus">Post to Wall</span>
