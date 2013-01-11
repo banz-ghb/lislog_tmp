@@ -270,6 +270,11 @@ $app_name = idx($app_info, 'name', '');
             </li>
             <!-- 2012-01-11 banz-ghb end   publish button added -->
             <li>
+              <a href="#" class="facebook-button" id="postToWall" data-url="<?php echo AppInfo::getUrl(); ?>">
+                <span class="plus">Post to Wall</span>
+              </a>
+            </li>
+            <li>
               <a href="#" class="facebook-button speech-bubble" id="sendToFriends" data-url="<?php echo AppInfo::getUrl(); ?>">
                 <span class="speech-bubble">Send Message</span>
               </a>
