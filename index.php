@@ -244,7 +244,7 @@ This is your app
 <?php } else { ?>
 <div>
 <h1>Welcome</h1>
-<div class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"></div>
+<div class="fb-login-button" data-scope="user_likes,user_photos"></div>
 </div>
 <?php } ?>
 </header>
