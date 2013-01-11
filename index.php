@@ -124,8 +124,8 @@ function logResponse(response) {
                                      function (response) {
                                      // If response is null the user canceled the dialog
                                      if (response != null) {
-                                     //alert("error lislog");
-                                     //alert(response);
+                                     // alert("error lislog");
+                                     // alert(response);
                                      logResponse(response);
                                      }
                                      }
