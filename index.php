@@ -116,6 +116,21 @@ $app_name = idx($app_info, 'name', '');
       }
 
       $(function(){
+        $('#publishAction').click(function() {
+           FB.api('/me/lislogapi:tune_in','POST'
+             {
+               radio_program : 'http://samples.ogp.me/558973837449053'
+             },
+             function (response) {
+             // If response is null the user canceled the dialog
+             if (response != null) {
+               logResponse(response);
+             }
+            }
+          );
+        });
+
+        
         // Set up so we handle click on the buttons
         $('#postToWall').click(function() {
           FB.ui(
@@ -215,6 +230,11 @@ $app_name = idx($app_info, 'name', '');
           window.location = window.location;
         });
 
+        //2013-01-11 banz-ghb start
+        /*
+          ,{scope: 'publish_actions'}
+        */
+        //2013-01-11 banz-ghb end
         FB.Canvas.setAutoGrow();
       };
 
@@ -263,7 +283,9 @@ $app_name = idx($app_info, 'name', '');
       <?php } else { ?>
       <div>
         <h1>Welcome</h1>
-        <div class="fb-login-button" data-scope="user_likes,user_photos"></div>
+        <!-- 2012-01-11 banz-ghb start publish_actions added -->
+        <div class="fb-login-button" data-scope="user_likes,user_photos,publish_actions"></div>
+        <!-- 2012-01-11 banz-ghb end   publish_actions added -->
       </div>
       <?php } ?>
     </header>
