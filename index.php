@@ -220,7 +220,7 @@ $app_name = idx($app_info, 'name', '');
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js";
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=554694347877002";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
@@ -369,6 +369,9 @@ $app_name = idx($app_info, 'name', '');
           </p>
         </li>
       </ul>
+    </section>
+    <section class="clearfix">
+    <fb:facepile href="https://lislog.herokuapp.com" max_rows="1" data-size="large" width="300"></fb:facepile>
     </section>
   </body>
 </html>
