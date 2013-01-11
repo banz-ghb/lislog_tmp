@@ -224,11 +224,6 @@ This is your app
 <p>Share your app:</p>
 <ul>
 <li>
-<a href="#" class="facebook-button" id="publishAction" data-url="<?php echo AppInfo::getUrl(); ?>">
-<span class="plus">Publish Action</span>
-</a>
-</li>
-<li>
 <a href="#" class="facebook-button" id="postToWall" data-url="<?php echo AppInfo::getUrl(); ?>">
 <span class="plus">Post to Wall</span>
 </a>
