@@ -118,7 +118,7 @@ function logResponse(response) {
 $(function(){
   $(function(){
     $('#publishAction').click(function() {
-                              FB.api('/me/lislogapi:tune_in','POST'
+                              FB.api('/me/lislogapi:tune_in','POST',
                                      {
                                      radio_program : 'http://samples.ogp.me/558973837449053'
                                      },
