@@ -120,7 +120,8 @@ function logResponse(response) {
                               FB.api('/me/lislogapp:tune_in','POST',
                                      {
                                      //2013-01-12 banz-ghb change url
-                                          radio_program   : 'radio/jp/co/tbs/elekata.html'
+                                          radio_program   : 'https://lislog.herokuapp.com/radio/jp/co/tbs/elekata.html'
+                                     //NG radio_program   : 'radio/jp/co/tbs/elekata.html'
                                      //NG radio_program   : 'http://lislog.herokuapp.com/radio/jp/co/tbs/elekata.html'
                                      //   radio_program : 'http://samples.ogp.me/558973837449053'
                                      },
