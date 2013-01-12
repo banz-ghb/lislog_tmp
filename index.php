@@ -116,6 +116,25 @@ function logResponse(response) {
 }
 
   $(function(){
+    $('#publishAction_fumou').click(function() {
+                              FB.api('/me/lislogapp:tune_in','POST',
+                                     {
+                                     //2013-01-12 banz-ghb change url
+                                     radio_program   : 'https://lislog.herokuapp.com/radio/jp/co/tbs/fumou.html'
+                                     //NG radio_program   : 'radio/jp/co/tbs/elekata.html'
+                                     //NG radio_program   : 'http://lislog.herokuapp.com/radio/jp/co/tbs/elekata.html'
+                                     //   radio_program : 'http://samples.ogp.me/558973837449053'
+                                     },
+                                     function (response) {
+                                     // If response is null the user canceled the dialog
+                                     if (response != null) {
+                                     //alert("error lislog");
+                                     //alert(response);
+                                     logResponse(response);
+                                     }
+                                     }
+                                     );
+                              });
     $('#publishAction').click(function() {
                               FB.api('/me/lislogapp:tune_in','POST',
                                      {
@@ -241,6 +260,11 @@ This is your app
 <div id="share-app">
 <p>Share your app:</p>
 <ul>
+<li>
+<a href="#" class="facebook-button" id="publishAction_fumou" data-url="<?php echo AppInfo::getUrl(); ?>">
+<span class="plus">Fumou</span>
+</a>
+</li>
 <li>
 <a href="#" class="facebook-button" id="publishAction" data-url="<?php echo AppInfo::getUrl(); ?>">
 <span class="plus">Publish Action</span>
