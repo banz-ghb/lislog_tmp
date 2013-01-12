@@ -120,8 +120,8 @@ function logResponse(response) {
                               FB.api('/me/lislogapp:tune_in','POST',
                                      {
                                      //2013-01-12 banz-ghb change url
-                                     radio_program   : 'http://lislog.herokuapp.com/lislogapp/radio/jp/co/tbs/elekata.html'
-                                     //radio_program : 'http://samples.ogp.me/558973837449053'
+                                     //radio_program   : 'http://lislog.herokuapp.com/lislogapp/radio/jp/co/tbs/elekata.html'
+                                       radio_program : 'http://samples.ogp.me/558973837449053'
                                      },
                                      function (response) {
                                      // If response is null the user canceled the dialog
