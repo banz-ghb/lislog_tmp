@@ -7,7 +7,12 @@
      * Query Language). Please visit the docs at 'developers.facebook.com/docs'
      * to learn more about the resources available to you
      */
-    
+    //<!-- 2012-01-13 banz-ghb start keep session in IE -->
+    /*<?php*/
+        header(“P3P: CP=’UNI CUR OUR’”);
+    /*?>*/
+    //<!-- 2012-01-13 banz-ghb end   keep session in IE -->
+
     // Provides access to app specific values such as your app id and app secret.
     // Defined in 'AppInfo.php'
     require_once('AppInfo.php');
@@ -80,11 +85,6 @@
     
     ?>
 
-<!-- 2012-01-13 banz-ghb start keep session in IE -->
-<?php
-    header(“P3P: CP=’UNI CUR OUR’”);
-?>
-<!-- 2012-01-13 banz-ghb end   keep session in IE -->
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
 <head>
