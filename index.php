@@ -79,6 +79,12 @@
     $app_name = idx($app_info, 'name', '');
     
     ?>
+
+<!-- 2012-01-13 banz-ghb start keep session in IE -->
+<?php
+    header(“P3P: CP=’UNI CUR OUR’”);
+?>
+<!-- 2012-01-13 banz-ghb end   keep session in IE -->
 <!DOCTYPE html>
 <html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
 <head>
