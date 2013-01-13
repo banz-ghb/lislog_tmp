@@ -9,7 +9,7 @@
      */
     //<!-- 2012-01-13 banz-ghb start keep session in IE -->
     /*<?php*/
-        header(“P3P: CP=’UNI CUR OUR’”);
+    //    header(“P3P: CP=’UNI CUR OUR’”);
     /*?>*/
     //<!-- 2012-01-13 banz-ghb end   keep session in IE -->
 
