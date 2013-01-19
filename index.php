@@ -1,5 +1,5 @@
 <?php
-    
+
     /**
      * This sample app is provided to kickstart your experience using Facebook's
      * resources for developers.  This sample app provides examples of several
@@ -16,17 +16,17 @@
     // Provides access to app specific values such as your app id and app secret.
     // Defined in 'AppInfo.php'
     require_once('AppInfo.php');
-    
+
     // Enforce https on production
     if (substr(AppInfo::getUrl(), 0, 8) != 'https://' && $_SERVER['REMOTE_ADDR'] != '127.0.0.1') {
         header('Location: https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
         exit();
     }
-    
+
     // This provides access to helper functions defined in 'utils.php'
     require_once('utils.php');
-    
-    
+
+
     /*****************************************************************************
      *
      * The content below provides examples of how to fetch Facebook data using the
@@ -35,16 +35,16 @@
      * information that you want to display to the user.
      *
      ****************************************************************************/
-    
+
     require_once('sdk/src/facebook.php');
-    
+
     $facebook = new Facebook(array(
                                    'appId'  => AppInfo::appID(),
                                    'secret' => AppInfo::appSecret(),
                                    'sharedSession' => true,
                                    'trustForwarded' => true,
                                    ));
-    
+
     $user_id = $facebook->getUser();
     if ($user_id) {
         try {
@@ -58,18 +58,18 @@
                 exit();
             }
         }
-        
+
         // This fetches some things that you like . 'limit=*" only returns * values.
         // To see the format of the data you are retrieving, use the "Graph API
         // Explorer" which is at https://developers.facebook.com/tools/explorer/
         $likes = idx($facebook->api('/me/likes?limit=4'), 'data', array());
-        
+
         // This fetches 4 of your friends.
         $friends = idx($facebook->api('/me/friends?limit=4'), 'data', array());
-        
+
         // And this returns 16 of your photos.
         $photos = idx($facebook->api('/me/photos?limit=16'), 'data', array());
-        
+
         // Here is an example of a FQL call that fetches all of your friends that are
         // using this app
         $app_using_friends = $facebook->api(array(
@@ -77,12 +77,12 @@
                                                   'query' => 'SELECT uid, name FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = me()) AND is_app_user = 1'
                                                   ));
     }
-    
+
     // Fetch the basic info of the app that they are using
     $app_info = $facebook->api('/'. AppInfo::appID());
-    
+
     $app_name = idx($app_info, 'name', '');
-    
+
     ?>
 
 <!DOCTYPE html>
@@ -175,7 +175,7 @@ function logResponse(response) {
                                }
                                );
                          });
-  
+
   $('#sendToFriends').click(function() {
                             FB.ui(
                                   {
@@ -190,7 +190,7 @@ function logResponse(response) {
                                   }
                                   );
                             });
-  
+
   $('#sendRequest').click(function() {
                           FB.ui(
                                 {
@@ -227,7 +227,7 @@ window.fbAsyncInit = function() {
             cookie     : true, // enable cookies to allow the server to access the session
             xfbml      : true // parse XFBML
             });
-    
+
     // Listen to the auth.login which will be called when the user logs in
     // using the Login button
     FB.Event.subscribe('auth.login', function(response) {
@@ -238,7 +238,7 @@ window.fbAsyncInit = function() {
                        // user asking if they want to send data again.
                        window.location = window.location;
                        });
-    
+
     FB.Canvas.setAutoGrow();
 };
 
@@ -264,7 +264,7 @@ This is your app
 </p>
 
 <div id="share-app">
-<p>Share your app:</p>
+<p>Share lislog:</p>
 <ul>
 <li>
 <a href="#" class="facebook-button" id="publishAction_fumou" data-url="<?php echo AppInfo::getUrl(); ?>">
@@ -345,7 +345,7 @@ This is your app
         $id = idx($photo, 'id');
         $picture = idx($photo, 'picture');
         $link = idx($photo, 'link');
-        
+
         $class = ($i++ % 4 === 0) ? 'first-column' : '';
         ?>
 <li style="background-image: url(<?php echo he($picture); ?>);" class="<?php echo $class; ?>">
@@ -365,7 +365,7 @@ This is your app
         // Extract the pieces of info we need from the requests above
         $id = idx($like, 'id');
         $item = idx($like, 'name');
-        
+
         // This display's the object that the user liked as a link to
         // that object's page.
         ?>
