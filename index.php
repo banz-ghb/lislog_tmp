@@ -406,7 +406,9 @@ This is your app
 <?php
     }
     ?>
-
+<section id="activity" class="clearfix">
+<div class="fb-activity" data-app-id="554694347877002" data-width="300" data-height="300" data-header="true" data-recommendations="false"></div>’
+</section>
 <section id="guides" class="clearfix">
 <h1>Learn More About Heroku &amp; Facebook Apps</h1>
 <ul>
