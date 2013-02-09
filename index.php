@@ -165,7 +165,7 @@ function logResponse(response) {
                                      }
                                      );
                               });
-    $('#publishAction').click(function() {
+    $('#publishAction_elekata').click(function() {
                               FB.api('/me/lislogapp:tune_in','POST',
                                      {
                                      //2013-01-12 banz-ghb change url
@@ -300,8 +300,8 @@ This is your app
 </a>
 </li>
 <li>
-<a href="#" class="facebook-button" id="publishAction" data-url="<?php echo AppInfo::getUrl(); ?>">
-<span class="plus">Publish Action</span>
+<a href="#" class="facebook-button" id="publishAction_elekata" data-url="<?php echo AppInfo::getUrl(); ?>">
+<span class="plus">Elekata</span>
 </a>
 </li>
 </ul>
