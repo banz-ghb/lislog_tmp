@@ -51,7 +51,7 @@
             // Fetch the viewer's basic information
             $basic = $facebook->api('/me');
             // 2012-02-12 banz-ghb start js parse
-            $basic_locale = '"//connect.facebook.net/'.he(idx($basic, 'locale')).'/all.js"';
+            $basic_locale = '"//connect.facebook.net/'.he(idx($basic, 'locale')).'/all.js";';
             // 2012-02-12 banz-ghb end   js parse
         } catch (FacebookApiException $e) {
             // If the call fails we check if we still have a user. The user will be
@@ -251,7 +251,7 @@ window.fbAsyncInit = function() {
  if (d.getElementById(id)) return;
  js = d.createElement(s); js.id = id;
  //2013-02-12 banz-ghb start i18n
- js.src = <?php echo he($basic_locale); ?>;
+ js.src = <?php echo he($basic_locale); ?>
  //js.src = "//connect.facebook.net/en_US/all.js";
  //2013-02-12 banz-ghb end   i18n
  fjs.parentNode.insertBefore(js, fjs);
