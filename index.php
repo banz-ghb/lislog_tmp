@@ -251,7 +251,7 @@ window.fbAsyncInit = function() {
  if (d.getElementById(id)) return;
  js = d.createElement(s); js.id = id;
  //2013-02-12 banz-ghb start i18n
- alert(<?php echo $basic_locale; ?>);
+ //alert(<?php echo $basic_locale; ?>);
  js.src = <?php echo $basic_locale; ?>
  //js.src = "//connect.facebook.net/en_US/all.js";
  //2013-02-12 banz-ghb end   i18n
