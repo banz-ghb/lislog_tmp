@@ -247,10 +247,7 @@ window.fbAsyncInit = function() {
  var js, fjs = d.getElementsByTagName(s)[0];
  if (d.getElementById(id)) return;
  js = d.createElement(s); js.id = id;
- //2013-02-06 banz-ghb start i18n
- js.src = "//connect.facebook.net/<?php echo he(idx($basic, 'locale')); ?>/all.js";
- //js.src = "//connect.facebook.net/en_US/all.js";
- //2013-02-06 banz-ghb end   i18n
+ js.src = "//connect.facebook.net/en_US/all.js";
  fjs.parentNode.insertBefore(js, fjs);
  }(document, 'script', 'facebook-jssdk'));
 </script>
@@ -361,6 +358,30 @@ This is your app
 </div>
 
 <div class="list">
+<h3>Things you like</h3>
+<ul class="things">
+<?php
+    foreach ($likes as $like) {
+        // Extract the pieces of info we need from the requests above
+        $id = idx($like, 'id');
+        $item = idx($like, 'name');
+
+        // This display's the object that the user liked as a link to
+        // that object's page.
+        ?>
+<li>
+<a href="https://www.facebook.com/<?php echo he($id); ?>" target="_top">
+<img src="https://graph.facebook.com/<?php echo he($id) ?>/picture?type=square" alt="<?php echo he($item); ?>">
+<?php echo he($item); ?>
+</a>
+</li>
+<?php
+    }
+    ?>
+</ul>
+</div>
+
+<div class="list">
 <h3>Friends using this app</h3>
 <ul class="friends">
 <?php
@@ -386,8 +407,8 @@ This is your app
     }
     ?>
 <section id="activity" class="clearfix">
-<!-- div class="fb-activity" data-app-id="554694347877002" data-width="300" data-height="300" data-header="true" data-recommendations="false" --><!-- /div -->
-<!-- div class="fb-activity" data-site="https://lislog.herokuapp.com/radio/jp/co/tbs/fumou.html" data-app-id="554694347877002" data-action="lislogapp:tune_in" data-width="300" data-height="300" data-header="true" data-recommendations="false"--><!-- /div -->
+<div class="fb-activity" data-app-id="554694347877002" data-width="300" data-height="300" data-header="true" data-recommendations="false"></div>’
+<div class="fb-activity" data-site="https://lislog.herokuapp.com/radio/jp/co/tbs/fumou.html" data-app-id="554694347877002" data-width="300" data-height="300" data-header="true" data-recommendations="false"></div>
 </section>
 <section id="guides" class="clearfix">
 <h1>Learn More About Heroku &amp; Facebook Apps</h1>
