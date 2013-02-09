@@ -105,7 +105,7 @@
     if ($tmp_locale == '') {
     	$tmp_locale = 'en_US';
     }
-    $basic_locale = '"//connect.facebook.net/'.he($tmp_locale).'/all.js";';
+    $basic_locale = '"//connect.facebook.net/'.he($tmp_locale).'/all.js"';
     // 2012-02-12 banz-ghb end   js parse
     ?>
 
@@ -273,7 +273,7 @@ window.fbAsyncInit = function() {
  js = d.createElement(s); js.id = id;
  //2013-02-12 banz-ghb start i18n
  //alert(<?php echo $basic_locale; ?>);
- js.src = <?php echo $basic_locale; ?>
+ js.src = <?php echo $basic_locale; ?>;
  //js.src = "//connect.facebook.net/en_US/all.js";
  //2013-02-12 banz-ghb end   i18n
  fjs.parentNode.insertBefore(js, fjs);
