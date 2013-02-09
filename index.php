@@ -184,6 +184,7 @@ function logResponse(response) {
                                      }
                                      );
                               });
+  });
   // Set up so we handle click on the buttons
 </script>
 
