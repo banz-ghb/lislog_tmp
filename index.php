@@ -293,18 +293,18 @@ This is your app
 
 <div id="share-app">
 <p>Share lislog:</p>
-  <ul>
-    <li>
-      <a href="#" class="facebook-button" id="publishAction_fumou" data-url="<?php echo AppInfo::getUrl(); ?>">
-        <span class="plus">Fumou</span>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="facebook-button" id="publishAction" data-url="<?php echo AppInfo::getUrl(); ?>">
-        <span class="plus">Publish Action</span>
-      </a>
-    </li>
-  </ul>
+<ul>
+<li>
+<a href="#" class="facebook-button" id="publishAction_fumou" data-url="<?php echo AppInfo::getUrl(); ?>">
+<span class="plus">Fumou</span>
+</a>
+</li>
+<li>
+<a href="#" class="facebook-button" id="publishAction" data-url="<?php echo AppInfo::getUrl(); ?>">
+<span class="plus">Publish Action</span>
+</a>
+</li>
+</ul>
 </div>
 </div>
 <?php } else { ?>
