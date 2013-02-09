@@ -248,8 +248,8 @@ window.fbAsyncInit = function() {
  if (d.getElementById(id)) return;
  js = d.createElement(s); js.id = id;
  //2013-02-06 banz-ghb start i18n
- js.src = "//connect.facebook.net/<?php echo he(idx($basic, 'locale')); ?>/all.js";
- //js.src = "//connect.facebook.net/en_US/all.js";
+ //js.src = "//connect.facebook.net/<?php echo he(idx($basic, 'locale')); ?>/all.js";
+ js.src = "//connect.facebook.net/en_US/all.js";
  //2013-02-06 banz-ghb end   i18n
  fjs.parentNode.insertBefore(js, fjs);
  }(document, 'script', 'facebook-jssdk'));
