@@ -51,7 +51,7 @@
             // Fetch the viewer's basic information
             $basic = $facebook->api('/me');
             // 2012-02-12 banz-ghb start js parse
-            $basic_locale = '"//connect.facebook.net/'.idx($basic, 'locale').'/all.js";';
+            //$basic_locale = '"//connect.facebook.net/'.idx($basic, 'locale').'/all.js";';
             // 2012-02-12 banz-ghb end   js parse
         } catch (FacebookApiException $e) {
             // If the call fails we check if we still have a user. The user will be
@@ -86,6 +86,27 @@
 
     $app_name = idx($app_info, 'name', '');
 
+    // 2012-02-12 banz-ghb start js parse
+    $languages = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+    $languages = array_reverse($languages);
+
+    $tmp_locale = '';
+
+    foreach ($languages as $language) {
+    	if (preg_match('/^ja/i', $language)) {
+    		$tmp_locale = 'ja_JP';
+    	} elseif (preg_match('/^en/i', $language)) {
+    		$tmp_locale = 'en_US';
+    	} else {
+    		$tmp_locale = 'en_US';
+    	}
+    }
+
+    if ($tmp_locale == '') {
+    	$tmp_locale = 'en_US';
+    }
+    $basic_locale = '"//connect.facebook.net/'.he($tmp_locale).'/all.js";';
+    // 2012-02-12 banz-ghb end   js parse
     ?>
 
 <!DOCTYPE html>
